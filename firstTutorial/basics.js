@@ -1,6 +1,9 @@
 const { ApolloServer, gql } = require('apollo-server');
 
 // The GraphQL schema
+// shcema is most importatnt when your are
+//working with graphql
+
 const typeDefs = gql`
   type Query {
     "A simple type for getting started!"
@@ -13,6 +16,7 @@ const typeDefs = gql`
 `;
 
 // A map of functions which return data for the schema.
+
 const resolvers = {
   Query: {
     book: () => { return {title: 'Born a Crime', author: 'Trevor Noah'}}
@@ -27,3 +31,4 @@ const server = new ApolloServer({
 server.listen().then(({ url }) => {
     console.log(`🚀 Server ready at ${url}`)
 });
+
